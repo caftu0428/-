@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color : gray;
+}
+
+/* 웹폰트 */
+@font-face {
+    font-family: 'Cafe24Dongdong';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+aside{
+
+    display: flex;
+    flex-direction: column;
+
+    width: 80px;
+    height: 370px;   
+
+    position: fixed;
+
+    right: 50px;
+
+    top: 50%;
+    transform: translateY(-50%);/
+
+}
+
+nav{
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--main-color);
+    background-color: black;
+    position: sticky;
+    top: -1px;
+    z-index: 1000;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar > li{
+    width: 30%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar > li > a{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--main-color);
+    font-family: 'Cafe24Dongdong';
+
+    padding: 3px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar > li > a:hover{
+    color: red;
+}
