@@ -1,22 +1,48 @@
+:root{
+    --main-color : gray;
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --main-color : gray;
+a{
+    color: black;
+    text-decoration: none;
 }
 
-/* 웹폰트 */
-@font-face {
-    font-family: 'Cafe24Dongdong';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+ul{
+    list-style: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    
+    min-width: 800px;
+    min-height: 100vh;
+}
+
+/* ------font------ */
+@font-face {/* 도스필기 */
+    font-family: 'DOSPilgiMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
-/* -------------- */
+@font-face { /* 도스샘플 */
+    font-family: 'DOSSaemmul';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSSaemmul.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -----------nav----------- */
 
 nav{
     padding: 5px 10px;
@@ -24,27 +50,29 @@ nav{
     background-color: black;
     position: sticky;
     top: -1px;
-    z-index: 1000;
+    z-index: 500;
 }
 
 .navbar{
     display: flex;
     justify-content: center;
+    min-width: 800px;
 }
 
 .navbar > li{
-    width: 30%;
+    width: 20%;
     height: 40px;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .navbar > li > a{
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
     color: var(--main-color);
-    font-family: 'Cafe24Dongdong';
+    font-family: 'DOSPilgiMedium';
 
     padding: 3px 10px;
     width: 100%;
@@ -52,11 +80,118 @@ nav{
 }
 
 .navbar > li > a:hover{
-    color: red;
+    color: darkred;
+}
+
+.navbar > li:not(:last-child) > a{
+    border-right:4px solid var(--main-color);
 }
 
 
-/* -------------- */
+
+/* ----------- header------------------ */
+header{
+    display: block;
+    padding: 5px -5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 70px;
+    width: 100%;
+
+    max-width: 1200px
+}
+
+.header-container > div{
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.header-container-left{
+    position: relative;
+}
+
+.header-container-left .logo{
+    position: absolute;
+    top: 237px;
+    left: -64px;
+}
+
+.header-container-left .logo img{
+    width: 270px;
+    min-width: 200px;
+}
+
+.header-container-right a{
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 1.5em;
+    margin: -1px 15px ;
+    font-family: 'DOSPilgiMedium';
+}
+
+.banner-container{
+    width: 560px; 
+    height: 315px;
+    justify-content: center;
+    display: flex;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+
+    width: 80px;
+    height: 370px;   
+
+    /* 화면에 고정 */
+    position: fixed;
+
+
+
+    right: 50px;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+
+
+/*------------ main 태그---------- */
+
+.main-space-science{
+    font-family: 'DOSPilgiMedium';
+    font-size: 90px;
+    color: blue;
+
+
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.main-content-container > h1 {
+    font-family: 'DOSPilgiMedium';
+    color: rgb(99, 99, 241)
+}
+
 aside > a{
     display: block;
     width: 70px;
@@ -70,13 +205,126 @@ aside img{
     object-fit: contain;
 }
 
+.main-content-container  p{
+    font-family: 'DOSSaemmul';
+    font-size: 25px;
+    color: black;
+    white-space: pre-wrap;
+}
 
-.top-button{
+.main-row{
+    display:flex;
+    flex-direction: row;
+    border: 4px solid black;
+    max-width: 80%;
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 20px;
+    height: 400px;    
+    background-color: hsla(241, 100%, 88%, 0.5);
+}
+
+/* 메인 이미지 감싸는 요소 */
+.main-image-container{  
+    width: 30%;
+    height: auto;
+}
+
+.main-image-container > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 메인 글 감싸는 요소 */
+.main-content-container{
+    width: 70%;
+}
+
+/* --------------footer------- */
+
+footer{
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    height: 200px;
+
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    user-select: none;
-    color: grey;
+}
+
+footer > p{
     font-weight: bold;
+    margin: 20px 0px;
+    color: hsla(240, 2%, 66%, 0.5);
+}
+
+footer a{
+    color: hsla(240, 90%, 43%, 0.5);
+}
+
+footer span{
+    padding: 0 20px;
+    color: hsla(240, 90%, 43%, 0.5);
+}
+
+
+/* --------- 우주인 확대 ------- */
+
+.header-container-left:hover .header-container-left-img{
+    transform:scale(1.5);
+}
+
+.header-container-left-img{
+    transition-duration: 0.50s; 
+}
+
+  /* -----로켓 확대------ */
+  .top-rocket:hover.top-rocket{
+    transform:scale(1.5);
   }
+
+
+
+/*화면 너비 */
+
+@media screen and (max-width: 1200px){
+   .main-image-container{
+    width: 500px;
+   }
+}
+
+@media screen and (max-width: 1200px){
+    .header-container-left-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 1500px){
+    aside{
+        display: none;
+    }
+}
+
+
+/* ----반짝이는 ----- */
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .main-space-science {
+    animation: blink 0.5s infinite;
+    /* 반짝이는 애니메이션, 0.5초 간격으로 반복 */
+  }
+
+  /* -----위로가기------ */
+  .top-rocket:hover.top-rocket{
+    transform:scale(1.5);
+  }
+
